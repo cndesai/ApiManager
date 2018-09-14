@@ -1,0 +1,89 @@
+{
+	"name": "__NAME__",
+	"description": "__DESCRIPTION__\r\n",
+	"context": "/__CONTEXT__",
+	"version": "__VERSION__",
+	"provider": "admin",
+	"status": "CREATED",
+	"thumbnailUri": null,
+	"apiDefinition": "__APIDEFINITION__",
+	"wsdlUri": null,
+	"responseCaching": "Disabled",
+	"cacheTimeout": 300,
+	"destinationStatsEnabled": null,
+	"isDefaultVersion": false,
+	"type": "HTTP",
+	"transport": [
+		"http",
+		"https"
+	],
+	"tags": [
+		"__TAGS__"
+	],
+	"tiers": [
+		"Unlimited"
+	],
+	"apiLevelPolicy": null,
+	"authorizationHeader": null,
+	"maxTps": {
+		"production": 1000,
+		"sandbox": 5000
+	},
+	"visibility": "PUBLIC",
+	"visibleRoles": [],
+	"visibleTenants": [],
+	"endpointConfig": "__ENDPOINTCONFIG__",
+	"endpointSecurity": {
+		"type": "basic",
+		"username": "user",
+		"password": ""
+	},
+	"gatewayEnvironments": "Production and Sandbox",
+	"labels": [],
+	"sequences": [
+		{
+			"name": "json_validator",
+			"type": "in",
+			"id": null,
+			"shared": false
+		},
+		{
+			"name": "log_out_message",
+			"type": "out",
+			"id": null,
+			"shared": false
+		}
+	],
+	"subscriptionAvailability": null,
+	"subscriptionAvailableTenants": [],
+	"additionalProperties": {},
+	"accessControl": "NONE",
+	"accessControlRoles": [],
+	"businessInformation": {
+		"businessOwner": "Chintan Desai",
+		"businessOwnerEmail": "chintan.desai@ingramcontent.com",
+		"technicalOwner": "Chintan Desai",
+		"technicalOwnerEmail": "chintan.desai@ingramcontent.com"
+	},
+	"corsConfiguration": {
+		"corsConfigurationEnabled": false,
+		"accessControlAllowOrigins": [
+			"*"
+		],
+		"accessControlAllowCredentials": false,
+		"accessControlAllowHeaders": [
+			"authorization",
+			"Access-Control-Allow-Origin",
+			"Content-Type",
+			"SOAPAction"
+		],
+		"accessControlAllowMethods": [
+			"GET",
+			"PUT",
+			"POST",
+			"DELETE",
+			"PATCH",
+			"OPTIONS"
+		]
+	}
+}

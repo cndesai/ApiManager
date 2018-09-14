@@ -1,0 +1,121 @@
+<h1>{{title}}{{apiDetails.name | uppercase}}</h1>
+<hr>
+<table class="table table-striped table-hover">
+  <tr>
+    <th>Id</th>
+    <td>
+      <span [innerText]="apiDetails.id"></span>
+    </td>
+  </tr>
+  <tr>
+    <th>Name</th>
+    <td>
+      <span [innerText]="apiDetails.name"></span>
+    </td>
+  </tr>
+  <tr>
+    <th>Description</th>
+    <td>
+      <span [innerText]="apiDetails.description"></span>
+    </td>
+  </tr>
+  <tr>
+    <th>Context</th>
+    <td>
+      <span [innerText]="apiDetails.context"></span>
+    </td>
+  </tr>
+  <tr>
+    <th>Version</th>
+    <td>
+      <span [innerText]="apiDetails.version"></span>
+    </td>
+  </tr>
+  <tr>
+    <th>Provider</th>
+    <td>
+      <span [innerText]="apiDetails.provider"></span>
+    </td>
+  </tr>
+  <tr>
+    <th>Status</th>
+    <td>
+      <span [innerText]="apiDetails.status"></span>
+    </td>
+  </tr>
+  <tr>
+    <th>Thumbnail URI</th>
+    <td>
+      <span [innerText]="apiDetails.thumbnailUri"></span>
+    </td>
+  </tr>
+</table>
+<h2>API Definition</h2>
+<table class="table table-striped table-hover">
+  <div class="centerpanel" *ngFor="let apiPath of apiPaths">
+    <ngb-alert type="secondary" [dismissible]="false">
+      <h3>
+        <span [innerText]="apiPath.name"></span>
+      </h3>
+      <div class="centerpanel" *ngFor="let urlPattern of apiPath.urlPattern">
+        <tr>
+          <th>URL Mappings</th>
+        </tr>
+        <tr>
+          <th>Name</th>
+          <td>
+            <span [innerText]="urlPattern.name"></span>
+          </td>
+        </tr>
+        <tr>
+          <th>x-auth-type</th>
+          <td>
+            <span [innerText]="urlPattern.authType"></span>
+          </td>
+        </tr>
+        <tr>
+          <th>x-throttling-tier</th>
+          <td>
+            <span [innerText]="urlPattern.throttlingTier"></span>
+          </td>
+        </tr>
+        <tr>
+          <th>description</th>
+          <td>
+            <span [innerText]="urlPattern.description"></span>
+          </td>
+        </tr>
+        <tr>
+          <h3>parameters</h3>
+          <div class="centerpanel" *ngFor="let param of urlPattern.params">
+        <tr>
+          <th>description</th>
+          <td>
+            <span [innerText]="param.description"></span>
+          </td>
+        </tr>
+      </div>
+      </tr>
+      <tr>
+        <h3>responses</h3>
+        <div class="centerpanel" *ngFor="let response of urlPattern.responses">
+      <tr>
+        <th>Status Code</th>
+        <td>
+          <span [innerText]="response.statusCode"></span>
+        </td>
+        <th>Description</th>
+        <td>
+          <span [innerText]="response.description"></span>
+        </td>
+      </tr>
+  </div>
+  </tr>
+  </div>
+  </ngb-alert>
+  </div>
+</table>
+<div class="centerpanel">
+  <button routerLink="/getApis" class="btn btn-success">Back To List</button>
+  <button routerLink="/getApis" type="submit" class="btn btn-primary" (click)="publishAPI(apiDetails.id)">Publish</button>
+</div>

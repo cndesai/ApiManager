@@ -1,0 +1,76 @@
+<h1 [innerText]="title"></h1>
+<hr>
+<form class="form-horizontal" ngNativeValidate>
+  <fieldset>
+    <legend>Create New API</legend>
+    <div class="form-group">
+      <label for="inputAPIName" class="col-lg-2 control-label">Name *</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" id="inputAPIName" name="inputAPIName" [(ngModel)]="api.name">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputAPIContext" class="col-lg-2 control-label">Context *</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" id="inputAPIContext" name="inputAPIContext" [(ngModel)]="api.context">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputAPIVersion" class="col-lg-2 control-label">Version</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" id="inputAPIVersion" name="inputAPIVersion" placeholder="E.g., v1.0.0"
+          [(ngModel)]="api.version">
+      </div>
+    </div>
+    <!-- <div class="form-group">
+      <label for="inputAPIAccessControl" class="col-lg-2 control-label">Access Control</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" id="inputAPIAccessControl" name="inputAPIAccessControl" value="NONE"
+          placeholder="NONE/RESTRICTED" [(ngModel)]="api.accessControl">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputAPIVisibility" class="col-lg-2 control-label">Visibility on Store</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" id="inputAPIVisibility" name="inputAPIVisibility" value="PUBLIC"
+          placeholder="PUBLIC" [(ngModel)]="api.visibility">
+      </div>
+    </div> -->
+    <div class="form-group">
+      <label for="inputAPIDescription" class="col-lg-2 control-label">Description</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" id="inputAPIDescription" name="inputAPIDescription" placeholder=""
+          [(ngModel)]="api.description">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputAPITags" class="col-lg-2 control-label">Tags</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" id="inputAPITags" name="inputAPITags" placeholder="Add Tags"
+          [(ngModel)]="api.tags">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputURLPattern" class="col-lg-2 control-label">URL Pattern</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" id="inputURLPattern" name="inputURLPattern" placeholder="path"
+          [(ngModel)]="path.name">
+      </div>
+      <label for="inputActionType" class="col-lg-2 control-label">Action</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" id="inputActionType" name="inputActionType" placeholder="GET/POST/PUT"
+          [(ngModel)]="urlMapping.name">
+      </div>
+      <label for="inputActionDesctiption" class="col-lg-2 control-label">Action Description</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" id="inputActionDesctiption" name="inputActionDesctiption" [(ngModel)]="urlMapping.description">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10 col-lg-offset-2">
+        <button type="reset" class="btn btn-default">Cancel</button>
+        <button type="submit" class="btn btn-primary" (click)="createNewAPI()">Submit</button>
+      </div>
+    </div>
+  </fieldset>
+</form>
